@@ -6,7 +6,7 @@ device = 'cpu'  # or 'cpu'
 
 # data settings
 dataset_path = "dataset_project/images"  # parent directory of datasets
-class_name = "carpet"  # dataset subdirectory
+class_name = "leather"  # dataset subdirectory
 modelname = "model_carpet"  # export evaluations/logs with this name
 pre_extracted = True  # were feature preextracted with extract_features?
 
