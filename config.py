@@ -2,12 +2,12 @@
 research purposes. Don't try this code if you are a software engineer.'''
 
 # device settings
-device = 'cuda'  # or 'cpu'
+device = 'cpu'  # or 'cpu'
 
 # data settings
-dataset_path = "data/images"  # parent directory of datasets
-class_name = "dummy_data"  # dataset subdirectory
-modelname = "dummy_test"  # export evaluations/logs with this name
+dataset_path = "dataset_project/images"  # parent directory of datasets
+class_name = "carpet"  # dataset subdirectory
+modelname = "model_carpet"  # export evaluations/logs with this name
 pre_extracted = True  # were feature preextracted with extract_features?
 
 img_size = (768, 768)  # image size of highest scale, others are //2, //4
