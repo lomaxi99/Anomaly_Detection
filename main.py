@@ -6,7 +6,8 @@ For further information contact Marco Rudolph (rudolph@tnt.uni-hannover.de)'''
 import config as c
 from train import train
 from utils import load_datasets, make_dataloaders
+import tdqm
 
 train_set, test_set = load_datasets(c.dataset_path, c.class_name)
 train_loader, test_loader = make_dataloaders(train_set, test_set)
-train(train_loader, test_loader)
+tdqm(train(train_loader, test_loader))
