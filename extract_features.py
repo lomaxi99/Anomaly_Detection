@@ -31,7 +31,7 @@ def extract(train_loader, test_loader, class_name):
 
 
 export_name = c.class_name
-export_dir = 'dataset_project/feauters' + export_name + '/'
+export_dir = 'dataset_project/feauters/' + export_name + '/'
 c.pre_extracted = False
 os.makedirs(export_dir, exist_ok=True)
 train_set, test_set = load_datasets(c.dataset_path, c.class_name)
