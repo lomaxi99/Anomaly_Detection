@@ -100,7 +100,7 @@ def load_datasets(dataset_path, class_name):
 
 
 class FeatureDataset(Dataset):
-    def __init__(self, root="data/features/" + c.class_name + '/', n_scales=c.n_scales, train=False):
+    def __init__(self, root="dataset_project/features/" + c.class_name + '/', n_scales=c.n_scales, train=False):
 
         super(FeatureDataset, self).__init__()
         self.data = list()
