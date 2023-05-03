@@ -178,7 +178,7 @@ def evaluate(model, test_loader):
                     likelihood_grouped.append(torch.mean(z_grouped[-1] ** 2, dim=(1,)))
                 all_maps.extend(likelihood_grouped[0])
                 for i_l, l in enumerate(t2np(labels)):
-                    viz_maps([lg[i_l] for lg in likelihood_grouped], c.modelname + '_' + str(c.viz_sample_count), label=l, show_scales = 1)
+                    viz_maps([lg[i_l] for lg in likelihood_grouped], c.modelname + '_' + str(c.viz_sample_count), label=l)
                     c.viz_sample_count += 1
 
     anomaly_score = np.concatenate(anomaly_score)
