@@ -2,7 +2,7 @@
 research purposes. Don't try this code if you are a software engineer.'''
 
 # device settings
-device = 'cpu'  # or 'cpu'
+device = 'cuda'  # or 'cpu'
 
 # data settings
 dataset_path = "dataset_project/images"  # parent directory of datasets
