@@ -86,15 +86,15 @@ def viz_maps(maps, name, label):
     plt.clf()
     plt.imshow(map_to_viz)
     plt.axis('off')
-    plt.savefig(join(map_export_dir, name + '_map.jpg'), bbox_inches='tight', pad_inches=0)
+    plt.savefig(join(map_export_dir, name + '_map.png'), bbox_inches='tight', pad_inches=0)
 
     if label > 0:
         plt.clf()
         plt.imshow(image)
         plt.axis('off')
-        plt.savefig(join(map_export_dir, name + '_orig.jpg'), bbox_inches='tight', pad_inches=0)
+        plt.savefig(join(map_export_dir, name + '_orig.png'), bbox_inches='tight', pad_inches=0)
         plt.imshow(map_to_viz, cmap='viridis', alpha=0.3)
-        plt.savefig(join(map_export_dir, name + '_overlay.jpg'), bbox_inches='tight', pad_inches=0)
+        plt.savefig(join(map_export_dir, name + '_overlay.png'), bbox_inches='tight', pad_inches=0)
     return
 
 
@@ -114,7 +114,7 @@ def viz_map_array(maps, labels, n_col=8, subsample=4, max_figures=-1):
         col_count = (col_count + 1) % n_col
         if col_count == 0:
             if fig_count >= 0:
-                plt.savefig(join(map_export_dir, str(fig_count) + '.jpg'), bbox_inches='tight', pad_inches=0)
+                plt.savefig(join(map_export_dir, str(fig_count) + '.png'), bbox_inches='tight', pad_inches=0)
                 plt.close()
             fig, subplots = plt.subplots(3, n_col, figsize=(22, 8))
             fig_count += 1
@@ -139,7 +139,7 @@ def viz_map_array(maps, labels, n_col=8, subsample=4, max_figures=-1):
         subplots[1][i].axis('off')
         subplots[2][i].axis('off')
     if col_count > 0:
-        plt.savefig(join(map_export_dir, str(fig_count) + '.jpg'), bbox_inches='tight', pad_inches=0)
+        plt.savefig(join(map_export_dir, str(fig_count) + '.png'), bbox_inches='tight', pad_inches=0)
     return
 
 
@@ -178,7 +178,7 @@ def evaluate(model, test_loader):
                     likelihood_grouped.append(torch.mean(z_grouped[-1] ** 2, dim=(1,)))
                 all_maps.extend(likelihood_grouped[0])
                 for i_l, l in enumerate(t2np(labels)):
-                    # viz_maps([lg[i_l] for lg in likelihood_grouped], c.modelname + '_' + str(c.viz_sample_count), label=l, show_scales = 1)
+                    viz_maps([lg[i_l] for lg in likelihood_grouped], c.modelname + '_' + str(c.viz_sample_count), label=l, show_scales = 1)
                     c.viz_sample_count += 1
 
     anomaly_score = np.concatenate(anomaly_score)
