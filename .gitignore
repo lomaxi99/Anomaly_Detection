@@ -133,4 +133,4 @@ dmypy.json
 *.pyc
 *.npy
 *.png
-/home/scco0002/Anomaly_Detection/models/tmp/model_carpet
+models/tmp/
