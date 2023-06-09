@@ -44,7 +44,7 @@ def train(train_loader, test_loader):
                 optimizer.step()
 
             mean_train_loss = np.mean(train_loss)
-            if c.verbose and epoch == 0 and sub_epoch % 4 == 0:
+            if c.verbose  and sub_epoch % 4 == 0:
                 print('Epoch: {:d}.{:d} \t train loss: {:.4f}'.format(epoch, sub_epoch, mean_train_loss))
 
         # evaluate
